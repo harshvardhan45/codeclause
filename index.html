@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReGen-ResumeBuilder</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="icon" href="resumaaaaa.png" type="image/x-icon">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    
+</head>
+<body>
+  <div class="container" id="cv-form">
+     <h1 class="text-center my-1 text-light animate__animated animate__pulse ">Resume Generator</h1>
+     <a href="https://harshvardhan-handrale.netlify.app" target="_blank"  class="link-underline-dark">
+     <p class="text-center text-light animate__animated animate__pulse" >by Harshvardhan Handrale</p></a>
+
+    <div class="row text-light ">
+      <div class="col-md-6 text-light ">
+          <h3> Personal information</h3>
+          <div class="form-group text-light">
+            <label for="nameField">your Name</label>
+            <input type="text" id="nameField" placeholder="Enter here" class="form-control">
+          </div>
+
+          <div class="form-group text-light">
+            <label for="contactField">your phone number</label>
+            <input type="text" id="contactField" placeholder="Enter here" class="form-control">
+          </div>
+
+          
+          <div class="form-group text-light">
+            <label for="addressfield">your address</label>
+            <textarea type="text" id="addressfield" placeholder="Enter here" rows="5" class="form-control"></textarea>
+          </div>
+                            <!-- profile photo -->
+          <div class="form-grp">
+            <label for="">Select you profile photo</label>
+            <input  id="imgfield" type="file" class="form-control"  />
+          </div>
+
+          <p class="text-secondary my-3 text-light fw-bolder">your profile links</p>
+          <!-- contact links -->
+          <div class="form-group">
+            <label for="instaField">instagram link</label>
+            <input type="text" 
+            placeholder="enter your url here" id="instaField" class="form-control">
+          </div>
+
+          <div class="form-group text-light">
+            <label for="linkedField">linkedin link</label>
+            <input type="text" id="linkedField" placeholder="enter your url here" class="form-control">
+          </div>
+
+          <div class="form-group text-light">
+            <label for="gitField">github link</label>
+            <input type="text" id="gitField" placeholder="enter your url here" class="form-control">
+          </div>
+
+
+          <!-- second row -->
+        </div>
+      <div class="col-md-6 text-light ms-8" >
+        <h3>Professional information</h3>
+        <div class="form-group">
+          <label for="">objective</label>
+          <textarea type="text"rows="5" id="objectiveField"  placeholder="Enter here" class="form-control "></textarea>
+        </div>
+
+        <div class="form-group text-light" id="we">
+          <label for="">Experience</label>
+          <textarea type="text"  rows="5"placeholder="Enter here" class="form-control weField"></textarea>
+                    <!-- button -->
+          <div class="container text-center mt-2" id="weAddButton">
+            <button onclick="addWefield()" class="btn btn-primary my-3">add another</button>
+          </div>
+
+          <div class="form-group text-light" id="aq">
+            <label for="">skills</label>
+            <textarea type="text"  rows="2" placeholder="Enter here" class="form-control eqfield"></textarea>
+                      <!-- button -->
+            <div class="container text-center" id="aqAddButton">
+              <button onclick="addNewAQField()" class="btn btn-primary my-3">add another</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+                              <!-- ending button -->
+    
+    <br>                          
+    <div class="container text-center">
+      <button onclick="generatecv()" class="btn btn-primary btn-lg ">
+        Generate CV
+      </button>
+    </div>
+  </div>
+
+                                                            <!-- template -->
+<div class="container mt-2" id="cv-template">
+
+  <div class="row">
+
+    <div class="col-md-4 text-center background">
+      <img src="profilepic.png" id="imgT" class="img-fluid mt-4 myimg" alt="">
+        <div class="container">
+       <p id="nameT1">your name</p>
+       <p id="contactT">+9022223403</p>
+       <p id="addressT">cloud 9 society flat number 98,chanakyapuri,INDIA</p>
+       <hr />
+       <p><a id="instaT" href="">www.google.com</a></p>
+       <p><a id="linkedT" href="">www.google.com</a></p>
+       <p><a id="gitT" href="">www.google.com</a></p>
+      
+      </div>
+
+    </div>
+
+    <!-- second column -->
+    <div class="col-md-8 py-5">
+       <h1 class="text-center" id="nameT2"
+       style="font-weight: 800;">harshvardhan handrale</h1>
+
+
+       <div class="card mt-4">
+        <div class="card-header background">
+          <h3 class="ms-2">Objective</h3>
+        </div>
+        <div class="card-body">
+          <p id="objectiveT">Lorem ipsum dolor sit amet consectetur 
+            adipisicing elit. Aliquam blanditiis cumque quia quos
+             assumenda tempore vero quae? Veritatis, asperiores 
+             rerum cum at, labore
+             illum maxime unde magni corrupti nostrum eius.</p>
+        </div>
+       </div>
+
+
+       <div class="card mt-4">
+        <div class="card-header background">
+          <h3 class="ms-2">Experience</h3>
+        </div>
+        <div class="card-body">
+          <ul id="weT">
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati non quaerat soluta aspernatur fugit expedita sed, ratione, ducimus nobis quae id. Enim laboriosam officia eos ullam sint cupiditate exercitationem molestias.</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati non quaerat soluta aspernatur fugit expedita sed, ratione, ducimus nobis quae id. Enim laboriosam officia eos ullam sint cupiditate exercitationem molestias.</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati non quaerat soluta aspernatur fugit expedita sed, ratione, ducimus nobis quae id. Enim laboriosam officia eos ullam sint cupiditate exercitationem molestias.</li>
+          </ul>
+        </div>
+       </div>
+<!-- academic qualifications -->
+<div class="card mt-4">
+  <div class="card-header background">
+    <h3 class="ms-2">Skills</h3>
+  </div>
+  <div class="card-body">
+    <ul id="aqT">
+      <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati non quaerat soluta aspernatur fugit expedita sed, ratione, ducimus nobis quae id. Enim laboriosam officia eos ullam sint cupiditate exercitationem molestias.</li>
+      <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati non quaerat soluta aspernatur fugit expedita sed, ratione, ducimus nobis quae id. Enim laboriosam officia eos ullam sint cupiditate exercitationem molestias.</li>
+      <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati non quaerat soluta aspernatur fugit expedita sed, ratione, ducimus nobis quae id. Enim laboriosam officia eos ullam sint cupiditate exercitationem molestias.</li>
+    </ul>
+  </div>
+ </div>
+<div class="container mt-3 text-center" >
+  <button onclick="printcv()" class="btn background" style="background-color:violet; border:2px solid black">
+    Print CV
+  </button>
+</div>
+
+    </div>
+  </div>
+</div >
+
+
+  <br>
+<br>
+<br>
+<br>
+<div class="info" id="info">
+  <h4 class="text-primary ">what we do</h4>
+  <p> resume generator service is a powerful tool designed to streamline the often daunting task of crafting a compelling resume. 
+    With just a few clicks, you can transform your personal and professional information into a polished and professional document that 
+    showcases your skills and experiences. Say goodbye to the hours spent formatting and structuring your resume, as our user-friendly 
+    interface effortlessly compiles your details into a beautifully organized and easy-to-read format. Whether you're a seasoned 
+    professional or just starting your career journey, our resume generator ensures that your unique qualifications shine through, 
+    helping you make a lasting impression in the competitive job market.
+     Say hello to simplicity, efficiency, and excellence with our resume generator. Your dream job is just a few clicks away.</p>
+     <br>
+</div>
+
+                                                         <!-- contact -->
+   <div class="contact" id="contact">
+    <br>
+      <h5 class="text-white text-center "> Want to contact us for queries??</h5>
+      <p class="text-white-50 ms-2 text-center">We got your back</p>
+      <div class="links">
+      <a href="https://www.instagram.com/harshvardhan_handrale/" class="fa fa-instagram" target="_blank"> harshvardhan_handrale</a>
+      <br>
+      <br>
+      <a href="https://www.linkedin.com/in/harshvardhan-handrale-17ba53230/" class="fa fa-linkedin" target="_blank"> harshvardhan handrale</a>
+      <br>
+      <br>
+      <a href="https://github.com/harshvardhan45" class="fa fa-github" target="_blank"> git hub</a>
+    </div>
+    <br>
+    <br>
+    <br>
+    <small class="text-info-emphasis ms-2">look out for my portfolio at the top</small>
+   </div>
+
+  <video id="background-video" autoplay loop muted poster="video.mp4">
+    <source src="video.mp4" type="video/mp4">
+<script src="index.js"></script>
+<script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+<!-- 
+
+tools used 
+1.bootstrap
+2.animate.css
+3.w3school icons
+4.dribbble.com
+5.pixlr 
+6.simple css
+7.js
+8.html
+
+-->
